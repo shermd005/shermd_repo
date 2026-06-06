@@ -1,0 +1,14 @@
+---
+- name: Configure OSPF
+  hosts: cisco
+  gather_facts: false
+
+  tasks:
+
+    - name: Push OSPF Config
+      cisco.ios.ios_config:
+        src: ../templates/ospf.j2
+
+    - name: Save Config
+      cisco.ios.ios_config:
+        save_when: always

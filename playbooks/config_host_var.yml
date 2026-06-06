@@ -1,0 +1,13 @@
+---
+- name: Configure Loopback
+  hosts: cisco
+  gather_facts: false
+
+  tasks:
+
+    - name: Configure Loopback100
+      cisco.ios.ios_config:
+        parents: interface Loopback100
+        lines:
+          - ip address {{ loopback_ip }} 255.255.255.255
+          - description Configured-by-Ansible

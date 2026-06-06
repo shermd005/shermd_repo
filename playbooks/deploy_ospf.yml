@@ -1,0 +1,11 @@
+---
+- name: Configure OSPF
+  hosts: cisco
+  gather_facts: false
+
+  tasks:
+
+    - name: Generate OSPF config
+      template:
+        src: ../templates/ospf.j2
+        dest: /tmp/{{ inventory_hostname }}_ospf.cfg

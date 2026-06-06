@@ -1,0 +1,15 @@
+---
+- name: Check OSPF
+  hosts: cisco
+  gather_facts: false
+
+  tasks:
+
+    - name: Show OSPF neighbors
+      cisco.ios.ios_command:
+        commands:
+          - show ip ospf neighbor
+      register: ospf
+
+    - debug:
+        var: ospf.stdout_lines

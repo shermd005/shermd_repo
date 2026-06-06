@@ -1,0 +1,17 @@
+---
+- name: Create Loopback200
+  hosts: cisco
+  gather_facts: false
+
+  tasks:
+
+    - name: Configure Loopback200
+      cisco.ios.ios_config:
+        parents: interface Loopback200
+        lines:
+          - ip address 200.200.200.1 255.255.255.255
+          - description LAB_LOOPBACK
+
+    - name: Save Configuration
+      cisco.ios.ios_config:
+        save_when: always

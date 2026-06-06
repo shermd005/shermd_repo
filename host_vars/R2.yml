@@ -1,0 +1,5 @@
+hostname: R2
+loopback_ip: 2.2.2.2
+router_id: 2.2.2.2
+ospf_process: 1
+wan: 10.10.10.0

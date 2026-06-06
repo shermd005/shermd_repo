@@ -1,0 +1,18 @@
+---
+- name: Run Show Commands
+  hosts: cisco
+  gather_facts: false
+
+  tasks:
+
+    - name: Show Version
+      cisco.ios.ios_command:
+        commands:
+          - show version
+          - show ip interface brief
+          - show ip route
+      register: output
+
+    - name: Display Output
+      debug:
+        var: output.stdout_lines

@@ -1,0 +1,8 @@
+- name: Configure NTP Servers
+  cisco.ios.ios_config:
+    lines:
+      - "ntp server {{ item }}"
+  loop:
+    - 10.1.1.1
+    - 10.1.1.2
+    - 10.1.1.3

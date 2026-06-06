@@ -1,0 +1,5 @@
+hostname: R3
+loopback_ip: 3.3.3.3
+router_id: 3.3.3.3
+ospf_process: 1
+wan: 10.10.10.0

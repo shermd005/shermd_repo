@@ -1,0 +1,10 @@
+all:
+  children:
+    cisco:
+      hosts:
+        R1:
+          ansible_host: 10.10.10.10
+        R2:
+          ansible_host: 10.10.10.20
+        R3:
+          ansible_host: 10.10.10.30

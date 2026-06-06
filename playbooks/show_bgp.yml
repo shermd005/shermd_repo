@@ -1,0 +1,4 @@
+- name: Show BGP summary
+  cisco.ios.ios_command:
+    commands:
+      - show ip bgp summary

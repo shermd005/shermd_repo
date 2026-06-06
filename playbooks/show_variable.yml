@@ -1,0 +1,13 @@
+---
+- hosts: cisco
+  gather_facts: false
+
+  vars:
+    cmd: show ip route
+
+  tasks:
+
+    - name: Execute command
+      cisco.ios.ios_command:
+        commands:
+          - "{{ cmd }}"

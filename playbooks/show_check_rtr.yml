@@ -1,0 +1,17 @@
+---
+- name: Router Health Check
+  hosts: cisco
+  gather_facts: false
+
+  tasks:
+
+    - name: Collect router info
+      cisco.ios.ios_command:
+        commands:
+          - show version
+          - show ip interface brief
+      register: output
+
+    - name: Display result
+      debug:
+        var: output.stdout_lines
